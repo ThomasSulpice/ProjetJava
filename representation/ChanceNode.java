@@ -1,11 +1,19 @@
 package representation;
+import java.util.Random;
 
 public class ChanceNode extends Node{
-    public ChanceNode(String description){
+    private final Node[] potNodes;
+
+
+    public ChanceNode(String description, Node[] potNodes){
         super(description);
+        this.potNodes = potNodes;
     }
 
     public Node chooseNext(){
-        return this;
+        int potLen = potNodes.length;
+        Random rand = new Random();
+        int nextInt = rand.nextInt(potLen);
+        return potNodes[nextInt];
     }
 }
