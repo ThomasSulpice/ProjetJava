@@ -16,4 +16,9 @@ public class ImageNode extends NodeDecorator{
         /*** afficher l'image
          */
     }
+
+    @Override
+    public Node chooseNext(){
+        return node.chooseNext();
+    }
 }
