@@ -1,8 +1,8 @@
 package representation;
-
+import java.util.Scanner;
 
 public class DecisionNode extends Node{
-    private int outcomes;
+
     public DecisionNode(String description){
         super(description);
     }
