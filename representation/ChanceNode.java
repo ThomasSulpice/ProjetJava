@@ -2,11 +2,15 @@ package representation;
 import java.util.Random;
 
 public class ChanceNode extends Node{
-    private final Event[] potNodes;
+    private Event[] potNodes;
 
 
-    public ChanceNode(String description, Node[] potNodes){
+    public ChanceNode(String[] description, Event[] potNodes){
         super(description);
+        this.potNodes = potNodes;
+    }
+
+    public void setpotNodes(Event[] potNodes) {
         this.potNodes = potNodes;
     }
 
@@ -17,3 +21,4 @@ public class ChanceNode extends Node{
         return potNodes[nextInt];
     }
 }
+

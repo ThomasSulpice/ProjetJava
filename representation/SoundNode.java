@@ -6,7 +6,7 @@ public class SoundNode extends NodeDecorator{
      */
 
 
-    public SoundNode(Event wrapped , Node node){
+    public SoundNode(Event wrapped , Event node){
         super(wrapped , node);
     }
 

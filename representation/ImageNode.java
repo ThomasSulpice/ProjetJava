@@ -6,7 +6,7 @@ public class ImageNode extends NodeDecorator{
      */
 
 
-    public ImageNode(Event wrapped , Node node){
+    public ImageNode(Event wrapped , Event node){
         super(wrapped , node);
     }
 

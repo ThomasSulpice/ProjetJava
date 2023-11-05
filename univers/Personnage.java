@@ -5,7 +5,7 @@ public class Personnage {
     private int Level;
     private int Experience;
 
-    
+
 
     public Personnage(){
         Name = "";

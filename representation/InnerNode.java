@@ -1,9 +1,13 @@
 package representation;
 
 public class InnerNode extends Node{
-    private final Event nextNode;
-    public InnerNode(String description, Node nextNode){
+    private Event nextNode;
+    public InnerNode(String[] description, Node nextNode){
         super(description);
+        this.nextNode = nextNode;
+    }
+
+    public void setnextNode(Event nextNode){
         this.nextNode = nextNode;
     }
 

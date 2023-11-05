@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class DecisionNode extends Node{
 
-    public DecisionNode(String description){
+    public DecisionNode(String[] description){
         super(description);
     }
 

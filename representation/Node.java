@@ -1,28 +1,30 @@
 package representation;
 
 public abstract class Node implements Event {
-    private String description;
+    private String[] description;
     private static int NodeCpt;
     private final int NodeID;
 
     public Node(){
-        description = "";
+        description = new String[] {""};
         NodeCpt++;
         NodeID = NodeCpt;
     }
 
-    public Node(String description){
+    public Node(String[] description){
         this.description = description;
         NodeCpt++;
         NodeID = NodeCpt;
     }
 
-    public void setDescription(String description){
+    public void setDescription(String[] description){
         this.description = description;
     }
 
     public void display(){
-        System.out.println(description);
+        for (String desc : description){
+            System.out.println(desc);
+        }
     }
 
 
