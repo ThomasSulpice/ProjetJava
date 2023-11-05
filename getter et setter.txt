@@ -1,0 +1,22 @@
+fonctions types getter/setter pour une variable "var" de classe Var par ex:
+
+public Var getVar(){
+	return var;
+}
+
+public void setVar(Var var){
+	this.var = var;
+}
+
+
+(Essaie de mettre le nom de la variable avec des majuscules au début de chaque mot à part get/set pour chaque méthode, c'est bcp plus lisible comme ca, par ex getNode, getDescription etc)
+
+
+Pour savoir pour quelles variables faut le faire, regarde juste dans la classe quelles variables je definis en haut. En vrai toutes les variables sont importantes donc a part grosse exception faut le faire pour toutes les variables.
+
+Aussi de preference ecrit les getters/setters juste apres les constructeurs (genre pour une classe Node par ex, les trucs qui ressemblent a "public Node(..){...") , parce que c'est un truc de base qui prend pas la tete, du coup c'est mieux de le mettre avant les grosses methodes.
+
+
+Ca peut etre bien si tu le fais pour les classes Node , InnerNode , ChanceNode dans le package representation, et sinon dans univers fais le pour toutes les classes, c'est la ou c'est vraiment important.
+
+Genre par exemple c'est la ou je mets toutes les stats du personnage genre les PV et tout, donc c'est la ou c'est vraiment important parce que t'as souvent envie de changer les PV, le niveau du perso ou d'autres trucs comme ca par ex.
