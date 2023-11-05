@@ -7,7 +7,7 @@ public class DecisionNode extends Node{
         super(description);
     }
 
-    public Node chooseNext(){
+    public Event chooseNext(){
         return this;
     }
 }

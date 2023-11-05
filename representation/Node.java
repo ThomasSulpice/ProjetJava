@@ -26,5 +26,5 @@ public abstract class Node implements Event {
     }
 
 
-    public abstract Node chooseNext();
+    public abstract Event chooseNext();
 }

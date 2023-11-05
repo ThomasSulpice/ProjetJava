@@ -15,7 +15,7 @@ public abstract class NodeDecorator implements Event{
     }
 
     @Override
-    public Node chooseNext(){
+    public Event chooseNext(){
         return node.chooseNext();
     }
 }

@@ -17,8 +17,4 @@ public class SoundNode extends NodeDecorator{
          */
     }
 
-    @Override
-    public Node chooseNext(){
-        return node.chooseNext();
-    }
 }

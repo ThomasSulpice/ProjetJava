@@ -17,8 +17,4 @@ public class ImageNode extends NodeDecorator{
          */
     }
 
-    @Override
-    public Node chooseNext(){
-        return node.chooseNext();
-    }
 }
