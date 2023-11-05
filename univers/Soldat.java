@@ -1,4 +1,4 @@
 package univers;
 
-public class Soldat {
+public abstract class Soldat {
 }
