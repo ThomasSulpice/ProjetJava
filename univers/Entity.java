@@ -11,18 +11,58 @@ public abstract class Entity {
     public Entity(){
         name = "";
         level = 1;
-        attackPower = 4;
-        maxHP = 12;
+        attackPower = 30;
+        maxHP = 100;
         currentHP = maxHP;
     }
 
     public Entity(String name , Skill[] skills){
         this.name = name;
         level = 1;
-        attackPower = 4;
-        maxHP = 12;
+        attackPower = 30;
+        maxHP = 100;
         currentHP = maxHP;
         this.skills = skills;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getMaxHP() {
+        return maxHP;
+    }
+
+    public int getCurrentHP() {
+        return currentHP;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
+    }
+
+    public void setCurrentHP(int hp){
+        currentHP = hp;
     }
 
     public void restoreHP(){

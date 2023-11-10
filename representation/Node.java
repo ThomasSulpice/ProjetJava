@@ -1,7 +1,7 @@
 package representation;
 
 public abstract class Node implements Event {
-    private String[] description;
+    protected String[] description;
     private static int NodeCpt;
     private final int NodeID;
 

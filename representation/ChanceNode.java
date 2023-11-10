@@ -20,5 +20,6 @@ public class ChanceNode extends Node{
         int nextInt = rand.nextInt(potLen);
         return potNodes[nextInt];
     }
+
 }
 

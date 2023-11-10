@@ -1,4 +1,5 @@
 package univers;
+import representation.*;
 
 public class Character extends Entity{
     protected int experience;
@@ -18,6 +19,30 @@ public class Character extends Entity{
         skillsUsed[0] = skills[0];
     }
 
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public int getExpLvUp() {
+        return expLvUp;
+    }
+
+    public void setExpLvUp(int expLvUp) {
+        this.expLvUp = expLvUp;
+    }
+
+    public Skill[] getSkillsUsed() {
+        return skillsUsed;
+    }
+
+    public void setSkillsUsed(Skill[] skillsUsed) {
+        this.skillsUsed = skillsUsed;
+    }
+
     public int nextLevel(){
         return (level + 1)^3 - level^3;
     }
@@ -32,10 +57,10 @@ public class Character extends Entity{
                     skillsUsed[1] = skill;
                 }
                 break;
-            }
-        }
-    }
 
+}
+        }
+                }
     public void addExp(int expValue){
         experience += expValue;
         if (level == 100){
@@ -46,10 +71,14 @@ public class Character extends Entity{
                 level++;
                 experience -= expLvUp;
                 expLvUp = (level + 1)^3 - level^3;
-                maxHP += 3;
-                attackPower += 1;
+                maxHP += 10;
+                attackPower += 3;
                 this.newSkill();
             }
         }
+    }
+
+    public CombatNode combat(Monster monster , Event winningNode){
+        return new CombatNode(this , monster , winningNode);
     }
 }

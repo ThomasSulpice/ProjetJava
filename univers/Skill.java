@@ -6,6 +6,22 @@ public class Skill {
     protected final double acc;
     protected final int levelReq;
 
+    public String getName() {
+        return name;
+    }
+
+    public double getMultiplier() {
+        return multiplier;
+    }
+
+    public double getAcc() {
+        return acc;
+    }
+
+    public int getLevelReq() {
+        return levelReq;
+    }
+
     public Skill(String name , double multiplier , double acc , int levelReq){
         this.name = name;
         this.multiplier = multiplier;
