@@ -9,8 +9,8 @@ import javax.imageio.ImageIO;
 public class ImageNode extends NodeDecorator{
 
     private String imgDir;
-    public ImageNode(Event wrapped , Event node ,  String imgDir){
-        super(wrapped , node);
+    public ImageNode(Event wrapped , String imgDir){
+        super(wrapped);
         this.imgDir = imgDir;
     }
 

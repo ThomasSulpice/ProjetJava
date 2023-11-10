@@ -4,6 +4,8 @@ import representation.TerminalNode;
 
 public class SkillDB {
 
+    public final static SkillSingle regardmenacant = new SkillSingle("Regard menaçant" , 0.0 , 1.0 , 1);
+
     public final static SkillSingle etincelle = new SkillSingle("Etincelle" , 0.9 , 0.8 , 1);
     public final static SkillSingle flammeche = new SkillSingle("Flammèche" , 1.0 , 0.9 , 4);
     public final static SkillSingle lanceflamme = new SkillSingle("Lance-Flamme" , 1.2 , 1.0 , 7);

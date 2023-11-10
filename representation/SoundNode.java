@@ -9,8 +9,8 @@ public class SoundNode extends NodeDecorator{
 
     private String soundDir;
 
-    public SoundNode(Event wrapped , Event node , String soundDir){
-        super(wrapped , node);
+    public SoundNode(Event wrapped , String soundDir){
+        super(wrapped);
         this.soundDir = soundDir;
     }
 

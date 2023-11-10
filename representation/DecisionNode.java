@@ -7,36 +7,84 @@ public class DecisionNode extends Node{
     protected String[] potAnswers;
     protected Scanner input;
     protected int answerNbr;
+    protected boolean freeChoice;
 
 
 
-    public DecisionNode(String[] description , Event[] potNodes , String[] potAnswers){
+    public DecisionNode(String[] description , Event[] potNodes , String[] potAnswers , boolean freeChoice){
         super(description);
         this.potNodes = potNodes;
         this.potAnswers = potAnswers;
+        this.freeChoice = freeChoice;
+    }
+
+    public Event[] getPotNodes() {
+        return potNodes;
+    }
+
+    public void setPotNodes(Event[] potNodes) {
+        this.potNodes = potNodes;
+    }
+
+    public String[] getPotAnswers() {
+        return potAnswers;
+    }
+
+    public void setPotAnswers(String[] potAnswers) {
+        this.potAnswers = potAnswers;
+    }
+
+    public boolean isFreeChoice() {
+        return freeChoice;
+    }
+
+    public void setFreeChoice(boolean freeChoice) {
+        this.freeChoice = freeChoice;
+    }
+
+    public int getAnswerNbr() {
+        return answerNbr;
+    }
+
+    public void setAnswerNbr(int answerNbr) {
+        this.answerNbr = answerNbr;
     }
 
     @Override
     public void display(){
         super.display();
-        int answerLength = potAnswers.length;
-        input = new Scanner(System.in);
-        boolean isInPotNodes = false;
-        while (isInPotNodes == false){
-            for (int i=0 ; i<answerLength ; i++){
-                if (potAnswers[i].equals(input.next())){
-                    isInPotNodes = true;
-                    answerNbr = i;
+        if (freeChoice != true){
+            input = new Scanner(System.in);
+            int answerLength = potAnswers.length;
+            boolean isInPotNodes = false;
+            while (isInPotNodes == false){
+                String inputText = input.next();
+                for (int i=0 ; i<answerLength ; i++){
+                    if (potAnswers[i].equals(inputText)){
+                        isInPotNodes = true;
+                        answerNbr = i;
+                        break;
+                    }
+                }
+                if (isInPotNodes == false){
+                    System.out.println("Votre choix est incorrect. Veuillez réessayer.");
+                    input = new Scanner(System.in);
                 }
             }
-            if (isInPotNodes == false){
-                System.out.println("Votre choix est incorrect. Veuillez réessayer.");
-                input = new Scanner(System.in);
-            }
         }
+        else{
+            input = new Scanner(System.in);
+            potAnswers = new String[] {input.next()};
+        }
+
     }
 
     public Event chooseNext(){
-        return potNodes[answerNbr];
+        if (freeChoice == true){
+            return potNodes[0];
+        }
+        else{
+            return potNodes[answerNbr];
+        }
     }
 }

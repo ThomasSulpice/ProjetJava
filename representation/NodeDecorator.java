@@ -3,7 +3,7 @@ package representation;
 public abstract class NodeDecorator implements Event{
     protected final Event wrapped;
 
-    public NodeDecorator(Event wrapped , Event node){
+    public NodeDecorator(Event wrapped){
         this.wrapped = wrapped;
     }
 
