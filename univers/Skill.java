@@ -1,6 +1,6 @@
 package univers;
 
-public class Skill {
+public abstract class Skill {
     protected final String name;
     protected final double multiplier;
     protected final double acc;
