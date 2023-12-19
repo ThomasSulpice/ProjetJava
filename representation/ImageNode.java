@@ -37,5 +37,4 @@ public class ImageNode extends NodeDecorator{
             }
         });
     }
-
 }

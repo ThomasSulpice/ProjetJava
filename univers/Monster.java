@@ -5,8 +5,8 @@ public class Monster extends Entity{
     public Monster(String name , Skill[] skills , int level){
         super(name , skills);
         this.level = level;
-        maxHP = 100 + 10*level;
-        attackPower = 30 + 3*level;
+        maxHP = 100 + 10*(level-1);
+        attackPower = 30 + 3*(level-1);
         skillUsed = skills[0];
         currentHP = maxHP;
     }

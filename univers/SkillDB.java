@@ -4,7 +4,7 @@ import representation.TerminalNode;
 
 public class SkillDB {
 
-    public final static SkillSingle regardmenacant = new SkillSingle("Regard menaçant" , 0.0 , 1.0 , 1);
+    public final static SkillSingle regardmenacant = new SkillSingle("Regard menaçant" , 1.0 , 1.0 , 1);
 
     public final static SkillSingle etincelle = new SkillSingle("Etincelle" , 0.9 , 0.8 , 1);
     public final static SkillSingle flammeche = new SkillSingle("Flammèche" , 1.0 , 0.9 , 4);
@@ -27,5 +27,5 @@ public class SkillDB {
     public final static SkillSingle tirmultiple = new SkillSingle("Tir multiple" , 1.3 , 0.9 , 7);
     public final static SkillAoE pluiedefleches = new SkillAoE("Pluie de flèches" , 1.0 , 0.9 , 10);
 
-    public final static Skill[] archerSkills = new Skill[] {coupdepee , estoc , taille , tranche};
+    public final static Skill[] archerSkills = new Skill[] {tirbasique , flechepercante , tirmultiple , pluiedefleches};
 }
