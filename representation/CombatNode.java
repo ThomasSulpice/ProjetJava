@@ -18,10 +18,10 @@ public class CombatNode extends DecisionNode{
         this.character = character;
         this.monster = monster;
         if (character.getLevel() > 9){
-            description[1] += character.getSkillsUsed()[0].getName() + " (entrez 0) / " + character.getSkillsUsed()[1].getName() + " (entrez 1) (bug, le programme marche qu'à partir de la 3è fois qu'on entre la valeur)";
+            description[1] += character.getSkillsUsed()[0].getName() + " (entrez 0) / " + character.getSkillsUsed()[1].getName() + " (entrez 1)";
         }
         else{
-            description[1] += character.getSkillsUsed()[0].getName() + " (entrez 0) (bug, le programme marche qu'à partir de la 3è fois qu'on entre la valeur)";
+            description[1] += character.getSkillsUsed()[0].getName() + " (entrez 0)";
             potAnswers = new String[] {"0"};
         }
     }
@@ -30,16 +30,19 @@ public class CombatNode extends DecisionNode{
     @Override
     public Event chooseNext() {
 
+        int indexAtkUsed = Integer.parseInt(inputText);
         float charAtkPower = character.getAttackPower();
         float monsterAtkPower = monster.getAttackPower();
-        long dmgDealtLong = Math.round((charAtkPower * character.getSkillsUsed()[Integer.parseInt(input.next())].getMultiplier()));
+        long dmgDealtLong = Math.round((charAtkPower * character.getSkillsUsed()[indexAtkUsed].getMultiplier()));
         int dmgDealt = (int) dmgDealtLong;
         long dmgReceivedLong = Math.round((monsterAtkPower * monster.getSkillUsed().getMultiplier()));
         int dmgReceived = (int) dmgReceivedLong;
 
 
+
+
         monster.setCurrentHP(monster.getCurrentHP() - dmgDealt);
-        System.out.println("Vous utilisez " + character.getSkillsUsed()[Integer.parseInt(input.next())].getName() + "!");
+        System.out.println("Vous utilisez " + character.getSkillsUsed()[indexAtkUsed].getName() + "!");
         System.out.println("Vous avez infligé " + dmgDealt + " dégâts à " + monster.getName() + "!" );
         if (monster.getCurrentHP() > 0){
             System.out.println("Votre adversaire n'a plus que " + monster.getCurrentHP() + " PV!" );

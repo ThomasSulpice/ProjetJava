@@ -5,7 +5,7 @@ import representation.*;
 public class NodeDB {
 
     public final static TerminalNode gameOverNode = new TerminalNode(new String[]{"Game Over"});
-    public final static TerminalNode ggNode = new TerminalNode(new String[]{"Félicitation! Vous avez remporté cette partie"});
+    public final static TerminalNode ggNode = new TerminalNode(new String[]{"Félicitation! Vous avez remporté cette partie!"});
     public final static TerminalNode nodeWell = new TerminalNode();
     public final static Event[] nodeArrayWell = new Event[]{nodeWell};
 

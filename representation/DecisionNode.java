@@ -5,7 +5,7 @@ public class DecisionNode extends Node{
 
     protected Event[] potNodes;
     protected String[] potAnswers;
-    protected Scanner input;
+    protected String inputText;
     protected int answerNbr;
     protected boolean freeChoice;
 
@@ -54,11 +54,11 @@ public class DecisionNode extends Node{
     public void display(){
         super.display();
         if (freeChoice != true){
-            input = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
             int answerLength = potAnswers.length;
             boolean isInPotNodes = false;
             while (isInPotNodes == false){
-                String inputText = input.next();
+                inputText = input.next();
                 for (int i=0 ; i<answerLength ; i++){
                     if (potAnswers[i].equals(inputText)){
                         isInPotNodes = true;
@@ -73,7 +73,7 @@ public class DecisionNode extends Node{
             }
         }
         else{
-            input = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
             potAnswers = new String[] {input.next()};
         }
 
