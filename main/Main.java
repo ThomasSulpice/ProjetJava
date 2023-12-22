@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import representation.*;
 import univers.*;
-import game.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -24,9 +23,9 @@ public class Main extends Application{
         Application.launch(args);
     }
 
-    private static ArrayList<Game> saves = new ArrayList<Game>();
+    private static ArrayList<Game> saves = new ArrayList<>();
     private static Game currentSave;
-    private static ArrayList<Event> nodeList = new ArrayList<Event>();
+    private final static ArrayList<Event> nodeList = new ArrayList<>();
 
     /** lance le reste de la partie après le choix du nom du personnage et de la classe
      */
@@ -57,7 +56,6 @@ public class Main extends Application{
     /** lance la partie et affiche le menu de sauvegarde après avoir configuré tous les boutons
      *
      * @param primaryStage
-     * @throws IOException
      */
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -74,7 +72,7 @@ public class Main extends Application{
 
         // code exécuté après un click sur le bouton New Game du menu de sauvegarde
         newGameButton.setOnAction(e1 -> {
-            ObjectInputStream ois = null;
+            ObjectInputStream ois;
             try {
                 ois = new ObjectInputStream(new FileInputStream(new File("saves/save.txt")));
             } catch (IOException ex) {
@@ -142,7 +140,7 @@ public class Main extends Application{
 
         // code exécuté après un click sur le bouton Load Save du menu de sauvegarde
         loadSaveButton.setOnAction(e2 -> {
-            ObjectInputStream ois = null;
+            ObjectInputStream ois;
             try {
                 ois = new ObjectInputStream(new FileInputStream(new File("saves/save.txt")));
             } catch (IOException ex) {
@@ -161,7 +159,7 @@ public class Main extends Application{
                 throw new RuntimeException(ex);
             }
 
-            ArrayList<Button> saveButtons = new ArrayList<Button>();
+            ArrayList<Button> saveButtons = new ArrayList<>();
 
             Platform.runLater(() -> {
                 Stage saveStage = new Stage();
@@ -192,7 +190,7 @@ public class Main extends Application{
 
         // code exécuté après un click sur le bouton Delete Save du menu de sauvegarde
         deleteSaveButton.setOnAction(e3 -> {
-            ObjectInputStream ois = null;
+            ObjectInputStream ois;
             try {
                 ois = new ObjectInputStream(new FileInputStream(new File("saves/save.txt")));
             } catch (IOException ex) {
@@ -224,7 +222,7 @@ public class Main extends Application{
                     saveButtons.get(saveButtons.size() - 1).setOnAction(e -> {
                         saves.remove(save);
                         saveStage.close();
-                        ObjectOutputStream oos = null;
+                        ObjectOutputStream oos;
                         try {
                             oos = new ObjectOutputStream(new FileOutputStream(new File("saves/save.txt")));
                         } catch (IOException ex) {

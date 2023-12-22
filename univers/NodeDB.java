@@ -11,7 +11,7 @@ public class NodeDB {
 
     public final static TerminalNode gameOverNode = new TerminalNode(new String[]{"Game Over"});
     public final static Event ggNode =
-            new ImageNode(new SoundNode(new TerminalNode(new String[] {"Félicitation! Vous avez remporté cette partie!"}) ,
+            new ImageNode(new SoundNode(new TerminalNode(new String[] {"Félicitations! Vous avez remporté cette partie!"}) ,
                     "sound_db/victory.wav") ,  "image_db/victory.jpg");
     public final static TerminalNode nodeWell = new TerminalNode();
     public final static Event[] nodeArrayWell = new Event[]{nodeWell};
