@@ -11,6 +11,7 @@ module com.example.projetfjxfinal {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires junit;
 
     opens com.example.projetfjxfinal to javafx.fxml;
     exports com.example.projetfjxfinal;

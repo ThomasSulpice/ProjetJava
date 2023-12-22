@@ -33,7 +33,7 @@ public abstract class Skill {
     }
 
     public boolean equals(Skill skill){
-        return name == skill.name & multiplier == skill.multiplier & acc == skill.acc & levelReq == skill.levelReq;
+        return name.equals(skill.name) & multiplier == skill.multiplier & acc == skill.acc & levelReq == skill.levelReq;
     }
 
     @Override

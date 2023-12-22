@@ -31,6 +31,4 @@ public class Monster extends Entity{
         float lvl = (float) level;
         return (int) (1 + Math.round(level * (50 + (level - 1) * 0.5) / 7.0));
     }
-
-
 }
