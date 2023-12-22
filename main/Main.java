@@ -3,6 +3,7 @@ package main;
 import game.Game;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.geometry.Pos;
 import representation.*;
 import univers.*;
 
@@ -177,6 +178,7 @@ public class Main extends Application{
                 }
 
                 VBox saveLayout = new VBox(10);
+                saveLayout.setAlignment(Pos.CENTER);
                 for (Button button : saveButtons) {
                     saveLayout.getChildren().add(button);
                 }
@@ -238,6 +240,7 @@ public class Main extends Application{
                 }
 
                 VBox saveLayout = new VBox(10);
+                saveLayout.setAlignment(Pos.CENTER);
                 for (Button button : saveButtons) {
                     saveLayout.getChildren().add(button);
                 }
@@ -255,6 +258,7 @@ public class Main extends Application{
         });
 
         VBox layout = new VBox(10);
+        layout.setAlignment(Pos.CENTER);
         layout.getChildren().addAll(newGameButton , loadSaveButton , deleteSaveButton , quitButton);
 
         Scene scene = new Scene(layout , 300 , 200);
