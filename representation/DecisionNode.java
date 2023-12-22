@@ -1,6 +1,11 @@
 package representation;
 import java.util.Scanner;
 
+/** DecisionNode hérite de Node.
+ * Un objet de la classe DecisionNode est un Node dont la méthode chooseNext renvoie un autre Node
+ * selon ce qu'a entré l'utilisateur dans la console.
+ * @author Thomas Sulpice
+ */
 public class DecisionNode extends Node{
 
     protected Event[] potNodes;
@@ -50,6 +55,9 @@ public class DecisionNode extends Node{
         this.answerNbr = answerNbr;
     }
 
+    /** Si freeChoice est faux, demande au joueur d'entrer une des valeurs de potAnswers,
+     * et si freeChoice est vrai, demande au joueur d'entrer n'importe quel mot
+     */
     @Override
     public void display(){
         super.display();
@@ -79,6 +87,10 @@ public class DecisionNode extends Node{
 
     }
 
+    /** renvoie le prochain Node de l'histoire en fonction de la réponse donnée par le joueur
+     * @return le seul élément de potNodes si freeChoice est vrai, le Node de potNodes corresondant à la
+     * réponse du joueur sinon
+     */
     public Event chooseNext(){
         if (freeChoice == true){
             return potNodes[0];

@@ -1,5 +1,9 @@
 package univers;
 
+/** Entity contient tous les attributs et méthodes nécessaires pour un objet qui
+ * pourrait être dans un combat, donc ici n'importe quel objet des classes Character et Monster.
+ * @author Thomas Sulpice
+ */
 public abstract class Entity {
     protected String name;
     protected int level;

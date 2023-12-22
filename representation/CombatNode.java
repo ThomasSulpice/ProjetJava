@@ -1,15 +1,17 @@
 package representation;
 
-import jdk.jshell.EvalException;
 import univers.*;
 import univers.Character;
 
+/** CombatNode hérite de DecisionNode.
+ * Un objet de CombatNode a 2 attributs en plus, character et monster, qui correspondent simplement
+ * au personnage et au monstre qui interviennent dans le combat.
+ * @author Thomas Sulpice
+ */
 public class CombatNode extends DecisionNode{
 
     private final Character character;
     private final Monster monster;
-    private Event winningNode;
-
 
 
     public CombatNode(Character character , Monster monster , Event winningNode){
@@ -27,6 +29,9 @@ public class CombatNode extends DecisionNode{
     }
 
 
+    /** réalise un tour d'un combat (Character et Monster) et renvoie un Node en fonction de l'issue
+     * @return cette instance de CombatNode si ni le Character ni le Monster meurt, le 1er élément de PotNodes si le monstre meurt, le 2è sinon
+     */
     @Override
     public Event chooseNext() {
 
@@ -40,10 +45,24 @@ public class CombatNode extends DecisionNode{
 
 
 
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
         monster.setCurrentHP(monster.getCurrentHP() - dmgDealt);
         System.out.println("Vous utilisez " + character.getSkillsUsed()[indexAtkUsed].getName() + "!");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Vous avez infligé " + dmgDealt + " dégâts à " + monster.getName() + "!" );
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (monster.getCurrentHP() > 0){
             System.out.println("Votre adversaire n'a plus que " + monster.getCurrentHP() + " PV!" );
         } else {
@@ -52,10 +71,24 @@ public class CombatNode extends DecisionNode{
             return this.potNodes[0];
         }
 
-
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         character.setCurrentHP(character.getCurrentHP() - dmgReceived);
         System.out.println("Votre adversaire utilise " + monster.getSkillUsed().getName() + "!");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Vous avez reçu " + dmgReceived + " dégâts!");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (character.getCurrentHP() > 0){
             System.out.println("Vous n'avez plus que " + character.getCurrentHP() + " PV!" );
             description = new String[] {description[description.length - 1]};
@@ -64,9 +97,13 @@ public class CombatNode extends DecisionNode{
             System.out.println("Vous êtes mort!");
             return this.potNodes[1];
         }
+
     }
 
 
+    /** effectue chooseNext et display sur le Node renvoyé jusqu'à que soit le Character,
+     * soit le Monster atteigne 0 HP.
+     */
     public void combatLoop(){
         while (character.getCurrentHP() > 0 && monster.getCurrentHP() > 0){
             this.chooseNext().display();

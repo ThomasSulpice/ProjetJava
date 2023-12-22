@@ -2,6 +2,9 @@ package univers;
 
 import representation.TerminalNode;
 
+/** SkillDB sert juste ici à stocker tous les skills sans surcharger une autre classe.
+ * @author Thomas Sulpice
+ */
 public class SkillDB {
 
     public final static SkillSingle regardmenacant = new SkillSingle("Regard menaçant" , 0. , 1.0 , 1);

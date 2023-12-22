@@ -1,5 +1,8 @@
 package univers;
 
+/** Un objet de la classe Skill contient tous les attributs nécessaires pour un skill utilisé lors d'un combat.
+ * @author Thomas Sulpice
+ */
 public abstract class Skill {
     protected final String name;
     protected final double multiplier;

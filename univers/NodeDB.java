@@ -2,6 +2,10 @@ package univers;
 
 import representation.*;
 
+/** NodeDB sert juste ici à stocker tous les noeuds apparaissant peu importe quel chemin de l'arbre de l'histoire est emprunté,
+ * et permet donc de ne pas surcharger une autre classe.
+ * @author Thomas Sulpice
+ */
 public class NodeDB {
 
     public final static TerminalNode gameOverNode = new TerminalNode(new String[]{"Game Over"});

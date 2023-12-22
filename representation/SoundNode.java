@@ -5,6 +5,11 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
+/** SoundNode hérite de NodeDecorator.
+ * Un objet de la classe SoundNode prend en argument le chemin d'un fichier son,
+ * et l'utilisation de la méthode display permet de jouer ce son.
+ * @author Thomas Sulpice
+ */
 public class SoundNode extends NodeDecorator{
 
     private String soundDir;
@@ -14,6 +19,8 @@ public class SoundNode extends NodeDecorator{
         this.soundDir = soundDir;
     }
 
+    /** affiche le son donné par le chemin
+     */
     @Override
     public void display(){
         super.display();

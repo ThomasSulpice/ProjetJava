@@ -1,6 +1,11 @@
 package univers;
 import representation.*;
 
+/** Character hérite de la classe Entity.
+ * Character contient tous les attributs et les méthodes nécessaires pour monter le niveau et changer les
+ * sorts d'une de ses instances.
+ * @author Thomas Sulpice
+ */
 public class Character extends Entity{
     protected int experience;
     protected int expLvUp;
@@ -47,6 +52,10 @@ public class Character extends Entity{
         return (level + 1)^3 - level^3;
     }
 
+
+    /** met à jour les sorts utilisés d'un Character selon les sorts de plus haut niveau qu'il peut utiliser
+     * parmis skills
+     */
     public void newSkill(){
         for (Skill skill : skills){
             if (skill.levelReq == level){
@@ -61,6 +70,11 @@ public class Character extends Entity{
 }
         }
                 }
+
+    /** met à jour l'expérience du Character, et si besoin le fait monter de niveau et met à jour ses stats
+     * et ses skills
+     * @param expValue l'expérience gagnée par le Character
+     */
     public void addExp(int expValue){
         experience += expValue;
         if (level == 100){
@@ -78,6 +92,11 @@ public class Character extends Entity{
         }
     }
 
+    /** génère un CombatNode
+     * @param monster Monster combattu par Character
+     * @param winningNode Node suivant de l'histoire en cas de victoire
+     * @return le CombatNode généré selon ces paramètres
+     */
     public CombatNode combat(Monster monster , Event winningNode){
         return new CombatNode(this , monster , winningNode);
     }

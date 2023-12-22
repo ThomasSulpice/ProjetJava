@@ -1,6 +1,12 @@
 package representation;
 import java.util.Random;
 
+/** ChanceNode hérite de Node.
+ * Un objet de la classe ChanceNode est un Node dont la méthode chooseNext renvoie un Node aléatoirement
+ * parmis une liste de Node qu'il prend en argument.
+ * Cette probabilité est pour l'instant uniforme.
+ * @author Thomas Sulpice
+ */
 public class ChanceNode extends Node{
     private Event[] potNodes;
 
@@ -14,6 +20,9 @@ public class ChanceNode extends Node{
         this.potNodes = potNodes;
     }
 
+    /** renvoie un Node aléatoirement parmis la liste de noeuds potNodes
+     * @return un des noeuds de potNodes aléatoirement (de façon équiprobable)
+     */
     public Event chooseNext(){
         int potLen = potNodes.length;
         Random rand = new Random();

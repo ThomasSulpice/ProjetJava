@@ -6,6 +6,11 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/** ImageNode hérite de NodeDecorator.
+ * Un objet de la classe ImageNode prend en argument le chemin d'un fichier image,
+ * et l'utilisation de la méthode display permet d'afficher cette image.
+ * @author Thomas Sulpice
+ */
 public class ImageNode extends NodeDecorator{
 
     private String imgDir;
@@ -14,6 +19,8 @@ public class ImageNode extends NodeDecorator{
         this.imgDir = imgDir;
     }
 
+    /** affiche l'image donnée par le chemin
+     */
     @Override
     public void display(){
         super.display();

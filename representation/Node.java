@@ -1,5 +1,8 @@
 package representation;
 
+/** Node est une classe abstraite contenant tous les attributs et les méthodes dont tout noeud a besoin.
+ * @author Thomas Sulpice
+ */
 public abstract class Node implements Event {
     protected String[] description;
     private static int NodeCpt;
@@ -21,9 +24,16 @@ public abstract class Node implements Event {
         this.description = description;
     }
 
+    /** affiche chaque ligne de description, avec un délai de 1sec entre chaque ligne
+     */
     public void display(){
         for (String desc : description){
             System.out.println(desc);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
