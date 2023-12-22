@@ -1,5 +1,7 @@
 package representation;
 
+import java.util.Arrays;
+
 /** Node est une classe abstraite contenant tous les attributs et les méthodes dont tout noeud a besoin.
  * @author Thomas Sulpice
  */
@@ -37,6 +39,18 @@ public abstract class Node implements Event {
         }
     }
 
-
     public abstract Event chooseNext();
+
+
+    public boolean equals(Node node){
+        return Arrays.equals(description, node.description) & NodeID == node.NodeID;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "description=" + Arrays.toString(description) +
+                ", NodeID=" + NodeID +
+                '}';
+    }
 }

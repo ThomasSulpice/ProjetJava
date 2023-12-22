@@ -1,4 +1,5 @@
 package representation;
+import java.util.Arrays;
 import java.util.Random;
 
 /** ChanceNode hérite de Node.
@@ -30,5 +31,16 @@ public class ChanceNode extends Node{
         return potNodes[nextInt];
     }
 
+    public boolean equals(ChanceNode chanceNode){
+        return super.equals(chanceNode) & potNodes == chanceNode.potNodes;
+    }
+
+    @Override
+    public String toString() {
+        return "ChanceNode{" +
+                "potNodes=" + Arrays.toString(potNodes) +
+                ", description=" + Arrays.toString(description) +
+                '}';
+    }
 }
 

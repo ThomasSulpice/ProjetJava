@@ -31,4 +31,18 @@ public abstract class Skill {
         this.acc = acc;
         this.levelReq = levelReq;
     }
+
+    public boolean equals(Skill skill){
+        return name == skill.name & multiplier == skill.multiplier & acc == skill.acc & levelReq == skill.levelReq;
+    }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "name='" + name + '\'' +
+                ", multiplier=" + multiplier +
+                ", acc=" + acc +
+                ", levelReq=" + levelReq +
+                '}';
+    }
 }

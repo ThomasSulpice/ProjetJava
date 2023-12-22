@@ -1,5 +1,7 @@
 package univers;
 
+import java.util.Arrays;
+
 /** Entity contient tous les attributs et méthodes nécessaires pour un objet qui
  * pourrait être dans un combat, donc ici n'importe quel objet des classes Character et Monster.
  * @author Thomas Sulpice
@@ -71,5 +73,21 @@ public abstract class Entity {
 
     public void restoreHP(){
         currentHP = maxHP;
+    }
+
+    public boolean equals(Entity entity){
+        return name == entity.name & level == entity.level & currentHP == entity.currentHP & skills == entity.skills;
+    }
+
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                ", attackPower=" + attackPower +
+                ", maxHP=" + maxHP +
+                ", currentHP=" + currentHP +
+                ", skills=" + Arrays.toString(skills) +
+                '}';
     }
 }

@@ -3,6 +3,8 @@ package representation;
 import univers.*;
 import univers.Character;
 
+import java.util.Arrays;
+
 /** CombatNode hérite de DecisionNode.
  * Un objet de CombatNode a 2 attributs en plus, character et monster, qui correspondent simplement
  * au personnage et au monstre qui interviennent dans le combat.
@@ -109,5 +111,20 @@ public class CombatNode extends DecisionNode{
             this.chooseNext().display();
         }
         monster.restoreHP();
+    }
+
+    public boolean equals(CombatNode combatNode){
+        return super.equals(combatNode) & character.equals(combatNode.character) & monster.equals(combatNode.monster);
+    }
+
+    @Override
+    public String toString() {
+        return "CombatNode{" +
+                "character=" + character +
+                ", monster=" + monster +
+                ", potAnswers=" + Arrays.toString(potAnswers) +
+                ", freeChoice=" + freeChoice +
+                ", description=" + Arrays.toString(description) +
+                '}';
     }
 }

@@ -7,6 +7,7 @@ import univers.Character;
 import java.io.Serializable;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /** Game contient toutes les informations nécessaires pour stocker une sauvegarde,
  * ainsi que des méthodes pour la mettre à jour.
@@ -55,5 +56,18 @@ public class Game implements Serializable {
 
     public void setCharacter(univers.Character character){
         this.character = character;
+    }
+
+    public boolean equals(Game game){
+        return this.character == game.character & this.chapter == game.chapter & this.part == game.part;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "character=" + character.toString() +
+                ", chapter=" + chapter +
+                ", part=" + part +
+                '}';
     }
 }

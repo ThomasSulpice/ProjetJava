@@ -1,4 +1,5 @@
 package representation;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /** DecisionNode hérite de Node.
@@ -98,5 +99,22 @@ public class DecisionNode extends Node{
         else{
             return potNodes[answerNbr];
         }
+    }
+
+    public boolean equals(DecisionNode decisionNode) {
+        return super.equals(decisionNode) & potNodes == decisionNode.potNodes & potAnswers == decisionNode.potAnswers
+                & freeChoice == decisionNode.freeChoice;
+    }
+
+    @Override
+    public String toString() {
+        return "DecisionNode{" +
+                "potNodes=" + Arrays.toString(potNodes) +
+                ", potAnswers=" + Arrays.toString(potAnswers) +
+                ", inputText='" + inputText + '\'' +
+                ", answerNbr=" + answerNbr +
+                ", freeChoice=" + freeChoice +
+                ", description=" + Arrays.toString(description) +
+                '}';
     }
 }

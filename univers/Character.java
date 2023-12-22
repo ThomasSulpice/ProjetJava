@@ -100,4 +100,10 @@ public class Character extends Entity{
     public CombatNode combat(Monster monster , Event winningNode){
         return new CombatNode(this , monster , winningNode);
     }
+
+
+    public boolean equals(Character character){
+        return super.equals(character) & experience == character.experience;
+    }
+
 }
