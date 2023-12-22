@@ -20,7 +20,7 @@ Le jeu utilise de nombreuses bibliothèques, telles que javaFX. Il est sans dout
  - extraire les fichiers du .zip
  - ouvrir un projet dans votre IDE et sélectionner le dossier ainsi extrait
  - installer les modules manquants
- - exécuter Main.java
+ - exécuter Main.java contenue dans le package main
 
 Vous êtes maintenant prêt à jouer ! Il suffit maintenant d'utiliser le menu de sauvegarde afin de lancer une nouvelle ou ancienne partie, de supprimer une sauvegarde ou de quitter le jeu.
 
