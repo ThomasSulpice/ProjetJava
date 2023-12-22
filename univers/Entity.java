@@ -15,7 +15,7 @@ public abstract class Entity {
     public Entity(){
         name = "";
         level = 1;
-        attackPower = 30;
+        attackPower = 40;
         maxHP = 100;
         currentHP = maxHP;
     }
@@ -23,7 +23,7 @@ public abstract class Entity {
     public Entity(String name , Skill[] skills){
         this.name = name;
         level = 1;
-        attackPower = 30;
+        attackPower = 40;
         maxHP = 100;
         currentHP = maxHP;
         this.skills = skills;

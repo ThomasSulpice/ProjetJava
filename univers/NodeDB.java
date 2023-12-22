@@ -1,5 +1,6 @@
 package univers;
 
+import com.almasb.fxgl.audio.Sound;
 import representation.*;
 
 /** NodeDB sert juste ici à stocker tous les noeuds apparaissant peu importe quel chemin de l'arbre de l'histoire est emprunté,
@@ -9,7 +10,9 @@ import representation.*;
 public class NodeDB {
 
     public final static TerminalNode gameOverNode = new TerminalNode(new String[]{"Game Over"});
-    public final static TerminalNode ggNode = new TerminalNode(new String[]{"Félicitation! Vous avez remporté cette partie!"});
+    public final static Event ggNode =
+            new ImageNode(new SoundNode(new TerminalNode(new String[] {"Félicitation! Vous avez remporté cette partie!"}) ,
+                    "sound_db/victory.wav") ,  "image_db/victory.jpg");
     public final static TerminalNode nodeWell = new TerminalNode();
     public final static Event[] nodeArrayWell = new Event[]{nodeWell};
 

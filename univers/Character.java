@@ -86,7 +86,7 @@ public class Character extends Entity{
                 experience -= expLvUp;
                 expLvUp = (level + 1)^3 - level^3;
                 maxHP += 10;
-                attackPower += 3;
+                attackPower += 4;
                 this.newSkill();
             }
         }
